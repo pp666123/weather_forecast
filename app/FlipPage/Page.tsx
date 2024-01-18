@@ -9,6 +9,7 @@ export default function Page(wearherData: objectType) {
     <div className="bg-[#fdfaf7] text-[#785e3a] border-solid border-gray-300 overflow-hidden p-[20px] shadow-inner-2 rounded-lg">
       <div>
         <iframe
+          id={wearherData.title}
           className="w-full"
           height="315"
           src={`https://www.youtube.com/embed/${wearherData.link
