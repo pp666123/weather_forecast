@@ -1,36 +1,16 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+## 專案
 
-## Getting Started
+網站：https://weather-forecast-alpha-beige.vercel.app/  
+名稱：農業部農業氣象影音一週手冊  
+說明：使用政府資料開放平台 API，配合 react-pageflip-agile 套件，讓使用者方便查看一週天氣。
 
-First, run the development server:
+- 使用 NEXT.JS 框架，熟悉 React、JavaScript 及 TypeScript
+- 使用 react-pageflip-agile 套件，翻頁動畫及自適應元件，電腦手機都可用
+- 使用 tailwind 設定樣式，className 方便維護
+- 使用 axios 串接政府資料，天天自動更新
+- 使用 Vercel 部屬，串接資料庫不必架後端
+- 6 小時完工
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+## 畫面
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
-
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
-
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
-
-## Learn More
-
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+![網站圖片](/public/demo.png)
