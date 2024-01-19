@@ -1,12 +1,8 @@
 "use client";
-import { useEffect, useLayoutEffect, useState } from "react";
-import HTMLFlipBook from "react-pageflip-agile";
+import { useEffect, useState } from "react";
 import axios from "axios";
-import Cover from "./FlipPage/Cover";
-import End from "./FlipPage/End";
-import Page from "./FlipPage/Page";
 import Swal from "sweetalert2";
-import Book from "./FlipPage/Book";
+import Book from "./components/FlipBook";
 
 export default function Home() {
   interface objectType {
@@ -31,29 +27,20 @@ export default function Home() {
               setData(res.data.slice(0, 7));
             });
 
-          // const pageArray = [];
-          // pageArray.push(Cover());
-
-          // data.forEach((wearherData: objectType) => {
-          //   pageArray.push(Page(wearherData));
-          // });
-          // pageArray.push(End());
-          // setPages(pageArray);
-
-          const iframe = document.getElementsByTagName("iframe")[6];
-          console.log(iframe);
-          if (iframe) {
-            iframe.addEventListener("load", () => {
-              Swal.hideLoading();
-              Swal.fire({
-                title: "載入完成。。。",
-                confirmButtonText: "打開手冊",
-              });
-            });
-            return () => {
-              iframe.removeEventListener("load", () => {});
-            };
-          }
+          // const iframe = document.getElementsByTagName("iframe")[6];
+          // console.log(iframe);
+          // if (iframe) {
+          //   iframe.addEventListener("load", () => {
+          //     Swal.hideLoading();
+          //     Swal.fire({
+          //       title: "載入完成。。。",
+          //       confirmButtonText: "打開手冊",
+          //     });
+          //   });
+          //   return () => {
+          //     iframe.removeEventListener("load", () => {});
+          //   };
+          // }
         } catch (error) {
           Swal.hideLoading();
           Swal.fire({

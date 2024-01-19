@@ -1,5 +1,7 @@
 import Image from "next/image";
+import { useEffect, useState } from "react";
 import HTMLFlipBook from "react-pageflip-agile";
+import Swal from "sweetalert2";
 
 interface objectType {
   link: string;
@@ -10,9 +12,7 @@ interface arrayType {
   data: objectType[];
 }
 
-export default function Book({ data }: arrayType) {
-  console.log(data.length > 0);
-  console.log(data);
+export default function FlipBook({ data }: arrayType) {
   return (
     <>
       {data.length > 0 ? (
@@ -55,7 +55,6 @@ export default function Book({ data }: arrayType) {
               </div>
             </div>
           </div>
-          {/*  */}
           {data.map((wearherData, index) => {
             return (
               <div
@@ -73,6 +72,14 @@ export default function Book({ data }: arrayType) {
                     title="YouTube video player"
                     allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
                     allowFullScreen
+                    onLoad={() => {
+                      if (index === 6) {
+                        Swal.fire({
+                          title: "載入完成。。。",
+                          confirmButtonText: "打開手冊",
+                        });
+                      }
+                    }}
                   />
                   <div>
                     <h3 className="text-3xl py-3 text-center">
@@ -84,7 +91,6 @@ export default function Book({ data }: arrayType) {
               </div>
             );
           })}
-          {/*  */}
           <div className="bg-[#fdfaf7] text-[#785e3a] border-solid border-gray-300 overflow-hidden p-[20px] shadow-inner-1 rounded-lg">
             <div className="flex flex-col justify-center h-full">
               <h3 className="text-3xl py-3 text-center">-End-</h3>
