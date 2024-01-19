@@ -16,6 +16,7 @@ export default function Home() {
     Swal.fire({
       title: "載入中。。。",
       showLoaderOnConfirm: true,
+      allowOutsideClick: false,
       didOpen: async () => {
         Swal.showLoading();
         try {
@@ -26,21 +27,6 @@ export default function Home() {
             .then((res) => {
               setData(res.data.slice(0, 7));
             });
-
-          // const iframe = document.getElementsByTagName("iframe")[6];
-          // console.log(iframe);
-          // if (iframe) {
-          //   iframe.addEventListener("load", () => {
-          //     Swal.hideLoading();
-          //     Swal.fire({
-          //       title: "載入完成。。。",
-          //       confirmButtonText: "打開手冊",
-          //     });
-          //   });
-          //   return () => {
-          //     iframe.removeEventListener("load", () => {});
-          //   };
-          // }
         } catch (error) {
           Swal.hideLoading();
           Swal.fire({

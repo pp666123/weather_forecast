@@ -59,7 +59,11 @@ export default function FlipBook({ data }: arrayType) {
             return (
               <div
                 key={index}
-                className="bg-[#fdfaf7] text-[#785e3a] border-solid border-gray-300 overflow-hidden p-[20px] shadow-inner-2 rounded-lg"
+                className={`${
+                  index % 2
+                    ? "bg-[#fdfaf7] text-[#785e3a] border-solid border-gray-300 overflow-hidden p-[20px] shadow-inner-1 rounded-lg"
+                    : "bg-[#fdfaf7] text-[#785e3a] border-solid border-gray-300 overflow-hidden p-[20px] shadow-inner-2 rounded-lg"
+                }`}
               >
                 <div>
                   <iframe
@@ -77,6 +81,7 @@ export default function FlipBook({ data }: arrayType) {
                         Swal.fire({
                           title: "載入完成。。。",
                           confirmButtonText: "打開手冊",
+                          allowOutsideClick: false,
                         });
                       }
                     }}
