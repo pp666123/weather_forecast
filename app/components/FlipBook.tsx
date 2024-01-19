@@ -25,7 +25,10 @@ export default function FlipBook({ data }: arrayType) {
           minWidth={300}
           minHeight={600}
         >
-          <div className="bg-[#fdfaf7] text-[#785e3a] border-solid border-gray-300 overflow-hidden p-[20px] shadow-inner-1 rounded-lg">
+          <div
+            data-testid="flip-page-cover"
+            className="bg-[#fdfaf7] text-[#785e3a] border-solid border-gray-300 overflow-hidden p-[20px] shadow-inner-1 rounded-lg"
+          >
             <div className="flex flex-col justify-between h-full">
               <div>
                 <h3 className="text-3xl py-3 text-center">
@@ -58,6 +61,7 @@ export default function FlipBook({ data }: arrayType) {
           {data.map((wearherData, index) => {
             return (
               <div
+                data-testid={`flip-page-${index}`}
                 key={index}
                 className={`${
                   index % 2
@@ -96,7 +100,10 @@ export default function FlipBook({ data }: arrayType) {
               </div>
             );
           })}
-          <div className="bg-[#fdfaf7] text-[#785e3a] border-solid border-gray-300 overflow-hidden p-[20px] shadow-inner-1 rounded-lg">
+          <div
+            data-testid="flip-page-end"
+            className="bg-[#fdfaf7] text-[#785e3a] border-solid border-gray-300 overflow-hidden p-[20px] shadow-inner-1 rounded-lg"
+          >
             <div className="flex flex-col justify-center h-full">
               <h3 className="text-3xl py-3 text-center">-End-</h3>
             </div>

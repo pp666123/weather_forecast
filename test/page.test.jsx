@@ -1,5 +1,5 @@
 import "@testing-library/jest-dom";
-import { render, screen, waitFor } from "@testing-library/react";
+import { render, screen, waitFor, fireEvent } from "@testing-library/react";
 import MockAdapter from "axios-mock-adapter";
 import Home from "../app/page";
 import axios from "axios";
@@ -55,6 +55,33 @@ test("data onload success then show 載入完成。。。 alert", async () => {
   await waitFor(() => {
     const sucessAlert = screen.getByText("載入完成。。。");
     expect(sucessAlert).toBeInTheDocument();
+
+    // 找到 "打開手冊" 按鈕並點擊它
+    const openHandbookButton = screen.getByText("打開手冊");
+    fireEvent.click(openHandbookButton);
+  });
+});
+
+test("click 打開手冊 button than can flip next page", async () => {
+  const mockData = [
+    { link: "link1", title: "title1", description: "description1" },
+    { link: "link2", title: "title2", description: "description2" },
+    { link: "link3", title: "title3", description: "description3" },
+    // Add more mock data as needed
+  ];
+
+  render(<FlipBook data={mockData} />);
+
+  // 模擬點擊第一頁，使其翻頁
+  const coverPage = screen.getByTestId("flip-page-cover");
+  fireEvent.click(coverPage);
+
+  // 使用 waitFor 等待翻頁的異步操作完成
+  await waitFor(() => {
+    // 斷言翻頁後的狀態或畫面變化，可以根據實際情況修改
+    // 這裡我們使用 data-testid 作為示例，你可以根據實際情況修改
+    const nextPageContent = screen.getByTestId("flip-page-1");
+    expect(nextPageContent).toBeInTheDocument();
   });
 });
 
