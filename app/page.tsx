@@ -15,7 +15,6 @@ export default function Home() {
   useEffect(() => {
     Swal.fire({
       title: "載入中。。。",
-      showLoaderOnConfirm: true,
       allowOutsideClick: false,
       didOpen: async () => {
         Swal.showLoading();
