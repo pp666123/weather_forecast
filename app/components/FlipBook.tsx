@@ -46,15 +46,17 @@ export default function FlipBook({ data }: arrayType) {
                 />
               </div>
 
-              <div className="flex justify-center">
+              <div className="flex flex-col sm:flex-row sm:justify-center justify-start items-center">
                 <p className="px-4 text-lg">資料來源：</p>
-                <Image
-                  src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/a9/ROC_Central_Weather_Bureau.svg/1200px-ROC_Central_Weather_Bureau.svg.png"
-                  width={45}
-                  height={100}
-                  alt=""
-                />
-                <p className="px-4 text-lg">交通部中央氣象署</p>
+                <div className="flex">
+                  <Image
+                    src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/a9/ROC_Central_Weather_Bureau.svg/1200px-ROC_Central_Weather_Bureau.svg.png"
+                    width={45}
+                    height={100}
+                    alt=""
+                  />
+                  <p className="px-4 text-lg">交通部中央氣象署</p>
+                </div>
               </div>
             </div>
           </div>

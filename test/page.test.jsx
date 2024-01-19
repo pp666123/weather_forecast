@@ -40,7 +40,7 @@ test("data onload success then show 載入完成。。。 alert", async () => {
     { link: "link5", title: "title5", description: "description5" },
     { link: "link6", title: "title6", description: "description6" },
     { link: "link7", title: "title7", description: "description7" },
-    // ... data only 7 data
+    // ... only get 7 data
   ];
 
   render(<FlipBook data={mockData} />);
@@ -67,7 +67,11 @@ test("click 打開手冊 button than can flip next page", async () => {
     { link: "link1", title: "title1", description: "description1" },
     { link: "link2", title: "title2", description: "description2" },
     { link: "link3", title: "title3", description: "description3" },
-    // Add more mock data as needed
+    { link: "link4", title: "title4", description: "description4" },
+    { link: "link5", title: "title5", description: "description5" },
+    { link: "link6", title: "title6", description: "description6" },
+    { link: "link7", title: "title7", description: "description7" },
+    // ... only get 7 data
   ];
 
   render(<FlipBook data={mockData} />);
