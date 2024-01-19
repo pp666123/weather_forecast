@@ -1,11 +1,12 @@
 "use client";
-import { useEffect, useState } from "react";
+import { useEffect, useLayoutEffect, useState } from "react";
 import HTMLFlipBook from "react-pageflip-agile";
 import axios from "axios";
 import Cover from "./FlipPage/Cover";
 import End from "./FlipPage/End";
 import Page from "./FlipPage/Page";
 import Swal from "sweetalert2";
+import Book from "./FlipPage/Book";
 
 export default function Home() {
   interface objectType {
@@ -13,7 +14,7 @@ export default function Home() {
     title: string;
     description: string;
   }
-  const [pages, setPages] = useState<React.ReactNode[]>([]);
+  const [data, setData] = useState<objectType[]>([]);
 
   useEffect(() => {
     Swal.fire({
@@ -22,20 +23,25 @@ export default function Home() {
       didOpen: async () => {
         Swal.showLoading();
         try {
-          const response = await axios.get(
-            "https://data.moa.gov.tw/Service/OpenData/Agriculturalcoa_videoRss.aspx?IsTransData=1&UnitId=F35"
-          );
-          const data = response.data.slice(0, 7);
-          const pageArray = [];
-          pageArray.push(Cover());
+          await axios
+            .get(
+              "https://data.moa.gov.tw/Service/OpenData/Agriculturalcoa_videoRss.aspx?IsTransData=1&UnitId=F35"
+            )
+            .then((res) => {
+              setData(res.data.slice(0, 7));
+            });
 
-          data.forEach((wearherData: objectType) => {
-            pageArray.push(Page(wearherData));
-          });
-          pageArray.push(End());
-          setPages(pageArray);
+          // const pageArray = [];
+          // pageArray.push(Cover());
 
-          const iframe = document.getElementById(data.pop().title);
+          // data.forEach((wearherData: objectType) => {
+          //   pageArray.push(Page(wearherData));
+          // });
+          // pageArray.push(End());
+          // setPages(pageArray);
+
+          const iframe = document.getElementsByTagName("iframe")[6];
+          console.log(iframe);
           if (iframe) {
             iframe.addEventListener("load", () => {
               Swal.hideLoading();
@@ -61,17 +67,7 @@ export default function Home() {
 
   return (
     <div className="flex justify-center items-center w-screen h-screen px-2">
-      <HTMLFlipBook
-        width={315}
-        height={450}
-        size={"stretch"}
-        maxWidth={630}
-        maxHeight={800}
-        minWidth={300}
-        minHeight={600}
-      >
-        {pages}
-      </HTMLFlipBook>
+      <Book data={data} />
     </div>
   );
 }
