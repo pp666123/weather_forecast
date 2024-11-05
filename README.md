@@ -2,7 +2,7 @@
 
 網站：https://weather-forecast-alpha-beige.vercel.app/  
 名稱：農業部農業氣象影音一週手冊  
-說明：使用政府資料開放平台 API，配合 react-pageflip-agile 套件，讓使用者像是看書班的看一週氣象。
+說明：使用政府資料開放平台 API，配合 react-pageflip-agile 套件，讓使用者像是看書般的看一週氣象。
 
 - 使用 NEXT.JS 框架，熟悉 React、JavaScript 及 TypeScript
 - 使用 react-pageflip-agile 套件，翻頁動畫及自適應元件，電腦手機都可用
