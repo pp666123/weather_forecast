@@ -39,7 +39,7 @@ export default function Home() {
 
   return (
     <div className="w-screen h-screen flex justify-center items-center  px-2">
-      <div className="w-[90%]">
+      <div className="w-[100%] md:w-[90%]">
         <Book data={data} />
       </div>
     </div>

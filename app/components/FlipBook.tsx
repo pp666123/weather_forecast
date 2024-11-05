@@ -15,7 +15,15 @@ export default function FlipBook({ data }: arrayType) {
   return (
     <>
       {data.length > 0 ? (
-        <HTMLFlipBook width={1} height={1} size={"stretch"} maxWidth={630}>
+        <HTMLFlipBook
+          width={1}
+          height={1.2}
+          size={"stretch"}
+          maxWidth={630}
+          maxHeight={800}
+          minWidth={300}
+          minHeight={600}
+        >
           <div
             data-testid="flip-page-cover"
             className="bg-[#fdfaf7] text-[#785e3a] border-solid border-gray-300 overflow-hidden p-[20px] shadow-inner-1 rounded-lg"
@@ -84,10 +92,10 @@ export default function FlipBook({ data }: arrayType) {
                     }}
                   />
                   <div>
-                    <h3 className="text-3xl py-3 text-center">
+                    <h3 className="text-xl py-2 text-center">
                       {wearherData.title}
                     </h3>
-                    <p className="px-4 text-lg">{wearherData.description}</p>
+                    <p className="px-4 text-base">{wearherData.description}</p>
                   </div>
                 </div>
               </div>
