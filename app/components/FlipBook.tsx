@@ -1,5 +1,4 @@
 import Image from "next/image";
-import { useEffect, useState } from "react";
 import HTMLFlipBook from "react-pageflip-agile";
 import Swal from "sweetalert2";
 
@@ -16,15 +15,7 @@ export default function FlipBook({ data }: arrayType) {
   return (
     <>
       {data.length > 0 ? (
-        <HTMLFlipBook
-          width={315}
-          height={450}
-          size={"stretch"}
-          maxWidth={630}
-          maxHeight={800}
-          minWidth={300}
-          minHeight={600}
-        >
+        <HTMLFlipBook width={1} height={1} size={"stretch"} maxWidth={630}>
           <div
             data-testid="flip-page-cover"
             className="bg-[#fdfaf7] text-[#785e3a] border-solid border-gray-300 overflow-hidden p-[20px] shadow-inner-1 rounded-lg"

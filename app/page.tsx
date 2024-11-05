@@ -38,8 +38,10 @@ export default function Home() {
   }, []);
 
   return (
-    <div className="flex justify-center items-center w-screen h-screen px-2">
-      <Book data={data} />
+    <div className="w-screen h-screen flex justify-center items-center  px-2">
+      <div className="w-[90%]">
+        <Book data={data} />
+      </div>
     </div>
   );
 }
